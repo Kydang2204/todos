@@ -1,4 +1,5 @@
 // index.js
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
@@ -12,8 +13,9 @@ app.use(bodyParser.json());
 // Requests done to the base path /todo should go through the todoRouter
 app.use(mung.json(
 
-  (body, req, res) => {
+  (body) => {
     const body2 = {
+
       res: 'ok',
       data: body,
     };
@@ -23,8 +25,9 @@ app.use(mung.json(
 
 app.use('/todos', todoRouter);
 
-const startApplication = async (body) => {
-  await mongoose.connect('mongodb+srv://andy:andy123@cluster0.ixw6l.mongodb.net/todos?retryWrites=true&w=majority',
+const startApplication = async () => {
+  console.log();
+  await mongoose.connect(`mongodb+srv://andy:${process.env.PW}@cluster0.ixw6l.mongodb.net/todos?retryWrites=true&w=majority`,
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -32,8 +35,9 @@ const startApplication = async (body) => {
   console.log(
     'Successfully connected to MongoDB at: mongodb',
   );
-  await app.listen(8000);
-  console.log('Listening on 8000...');
+  console.log();
+  await app.listen(process.env.PORT);
+  console.log(`Listening on port ${process.env.PORT}`);
 };
 
 startApplication();
