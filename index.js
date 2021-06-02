@@ -37,6 +37,8 @@ const startApplication = async () => {
     'Successfully connected to MongoDB at: mongodb',
   );
   console.log();
+
+  
   await app.listen(process.env.PORT);
   console.log(`Listening on port ${process.env.PORT}`);
 };
