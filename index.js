@@ -27,20 +27,20 @@ app.use('/todos', todoRouter);
 
 const startApplication = async () => {
   console.log();
+
   await mongoose.connect(`mongodb+srv://andy:${process.env.PW}@cluster0.ixw6l.mongodb.net/todos?retryWrites=true&w=majority`,
     {
 
       useNewUrlParser: true,
       useUnifiedTopology: true,
+
+
+      
     });
   console.log(
     'Successfully connected to MongoDB at: mongodb',
   );
   console.log();
-
-
-
-  
   await app.listen(process.env.PORT);
   console.log(`Listening on port ${process.env.PORT}`);
 };
