@@ -31,19 +31,12 @@ const startApplication = async () => {
   await mongoose.connect(`mongodb+srv://andy:${process.env.PW}@cluster0.ixw6l.mongodb.net/todos?retryWrites=true&w=majority`,
     {
 
-
-
-     
-      
-
-      
-
-
       useNewUrlParser: true,
       useUnifiedTopology: true,
 
 
 
+      
     });
   console.log(
     'Successfully connected to MongoDB at: mongodb',
