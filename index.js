@@ -39,8 +39,6 @@ const startApplication = async () => {
 
       
 
-
-
     });
   console.log(
     'Successfully connected to MongoDB at: mongodb',
