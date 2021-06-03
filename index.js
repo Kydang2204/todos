@@ -35,8 +35,6 @@ const startApplication = async () => {
       useUnifiedTopology: true,
 
 
-
-
     });
   console.log(
     'Successfully connected to MongoDB at: mongodb',
