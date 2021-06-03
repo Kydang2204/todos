@@ -35,8 +35,6 @@ const startApplication = async () => {
       useUnifiedTopology: true,
 
 
-
-
       
     });
   console.log(
