@@ -7,7 +7,7 @@ router.use(mung.json(
 
   (body) => {
     const body2 = {
-      res: 'fail',
+      res: 'ok',
       data: body,
     };
     return body2;
